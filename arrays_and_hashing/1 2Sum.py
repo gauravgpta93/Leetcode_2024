@@ -9,7 +9,7 @@ class Solution:
             if lookup_number_index is not None:
                 return [lookup_number_index, index]
             lookup_index_table[number] = index
-        return [-1, -1] # This line will never be executed
+        return [-1, -1]  # This line will never be executed
 
 def main():
     answer = Solution()
