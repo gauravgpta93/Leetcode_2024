@@ -41,7 +41,9 @@ class Solution:
     #                 end_index -= 1
     #     return [list(value) for value in result]
 
-    def get_total_zero(self, pair_of_same_type: list[int], set_of_opp_type: set[int]) -> set[tuple[int, ...]]:
+    def get_total_zero(
+        self, pair_of_same_type: list[int], set_of_opp_type: set[int]
+    ) -> set[tuple[int, ...]]:
         result: set[tuple[int, ...]] = set()
         for index, first_value in enumerate(pair_of_same_type):
             sub_list = pair_of_same_type[index + 1 :]
@@ -50,7 +52,6 @@ class Solution:
                 if -total in set_of_opp_type:
                     result.add(tuple(sorted([first_value, second_value, -total])))
         return result
-
 
     # using the property of 0 sum approach.
     def threeSum(self, nums: list[int]) -> list[list[int]]:
@@ -75,6 +76,8 @@ class Solution:
         result |= self.get_total_zero(negative_list, positive_set)
         result |= self.get_total_zero(positive_list, negative_set)
         return [list(value) for value in result]
+
+
 def main():
     answer = Solution()
     assert answer.threeSum([-1, 0, 1, 2, -1, -4]) == [[-1, -1, 2], [-1, 0, 1]]
