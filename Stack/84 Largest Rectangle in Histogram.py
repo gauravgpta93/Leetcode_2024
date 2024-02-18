@@ -11,6 +11,7 @@ class Solution:
         return max_area
 
 
+
 def main():
     ans = Solution()
     assert (output := ans.largestRectangleArea([2, 1, 5, 6, 2, 3])) == 10, output
